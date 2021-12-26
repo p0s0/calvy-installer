@@ -1,0 +1,57 @@
+<Window
+	x:Class="SkiBlox.MainWindow" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:local="clr-namespace:SkiBlox"
+	Title="SkiBlox - launcher"
+	Height="346.391"
+	Width="558.763"
+	WindowStyle="None"
+	ResizeMode="NoResize"
+	WindowStartupLocation="CenterScreen"
+	Loaded="Window_Loaded">
+	<Grid>
+		<Image
+			HorizontalAlignment="Center"
+			Height="137"
+			VerticalAlignment="Top"
+			Width="143"
+			Source="logo.png"
+			Margin="205,35,211,0" />
+		<Label
+			Name="text"
+			HorizontalContentAlignment="Center"
+			Content="Parsing arguments..."
+			HorizontalAlignment="Center"
+			VerticalAlignment="Top"
+			Margin="0,225,0,0"
+			Width="559"
+			RenderTransformOrigin="0.5,0.5"
+			FontSize="22"
+			FontFamily="Microsoft Tai Le"
+			Height="46" />
+		<ProgressBar
+			Name="prbar"
+			HorizontalAlignment="Left"
+			Height="537"
+			VerticalAlignment="Top"
+			Width="29"
+			Margin="265,49,0,-240"
+			Value="94"
+			Background="#FFF0F0F0"
+			IsIndeterminate="True"
+			LargeChange="5"
+			Minimum="45"
+			RenderTransformOrigin="0.5,0.5"
+			Orientation="Vertical"
+			Foreground="#FF6319AE"
+			BorderBrush="{x:Null}">
+			<UIElement.RenderTransform>
+				<TransformGroup>
+					<ScaleTransform />
+					<SkewTransform />
+					<RotateTransform
+						Angle="90.116" />
+					<TranslateTransform />
+				</TransformGroup>
+			</UIElement.RenderTransform>
+		</ProgressBar>
+	</Grid>
+</Window>
