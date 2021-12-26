@@ -15,36 +15,30 @@ using Microsoft.Win32;
 
 namespace SkiBlox
 {
-	// Token: 0x02000008 RID: 8
 	public partial class MainWindow : Window
 	{
-		// Token: 0x06000017 RID: 23 RVA: 0x00002360 File Offset: 0x00000560
 		public MainWindow()
 		{
 			this.InitializeComponent();
 		}
 
-		// Token: 0x06000018 RID: 24 RVA: 0x000023B6 File Offset: 0x000005B6
 		private void Window_Loaded(object sender, RoutedEventArgs e)
 		{
 			this.bw.DoWork += this.Bw_DoWork;
 			this.bw.RunWorkerAsync();
 		}
 
-		// Token: 0x06000019 RID: 25 RVA: 0x000023E0 File Offset: 0x000005E0
 		private void changetext(string txt)
 		{
 			base.Dispatcher.Invoke<object>(() => this.text.Content = txt);
 		}
 
-		// Token: 0x0600001A RID: 26 RVA: 0x0000241C File Offset: 0x0000061C
 		private void fail(string txt)
 		{
 			base.Dispatcher.Invoke<object>(() => this.text.Content = txt);
 			base.Dispatcher.Invoke<Brush>(() => this.prbar.Foreground = Brushes.Red);
 		}
 
-		// Token: 0x0600001B RID: 27 RVA: 0x00002470 File Offset: 0x00000670
 		private void Bw_DoWork(object sender, DoWorkEventArgs e)
 		{
 			string[] commandLineArgs = Environment.GetCommandLineArgs();
@@ -277,7 +271,6 @@ namespace SkiBlox
 			}
 		}
 
-		// Token: 0x0600001C RID: 28 RVA: 0x00002B74 File Offset: 0x00000D74
 		private void Wc_DownloadFileCompleted(object sender, AsyncCompletedEventArgs e)
 		{
 			Functions.UnZip("C:\\Program Files (x86)\\calvy\\calvy.zip", "C:\\Program Files (x86)\\calvy");
@@ -294,28 +287,16 @@ namespace SkiBlox
 			Environment.Exit(0);
 		}
 
-		// Token: 0x0600001D RID: 29 RVA: 0x00002C38 File Offset: 0x00000E38
 		private void Wc_DownloadProgressChanged(object sender, DownloadProgressChangedEventArgs e)
 		{
 			base.Dispatcher.Invoke<double>(() => this.prbar.Value = (double)e.ProgressPercentage);
 		}
 
-		// Token: 0x04000010 RID: 16
 		private BackgroundWorker bw = new BackgroundWorker();
-
-		// Token: 0x04000011 RID: 17
 		private BackgroundWorker bw2 = new BackgroundWorker();
-
-		// Token: 0x04000012 RID: 18
 		private bool downloaded = false;
-
-		// Token: 0x04000013 RID: 19
 		private bool failed = false;
-
-		// Token: 0x04000014 RID: 20
 		private string ticket = "1";
-
-		// Token: 0x04000015 RID: 21
 		private string gameid = "1";
 	}
 }
