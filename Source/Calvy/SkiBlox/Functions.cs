@@ -7,10 +7,6 @@ namespace SkiBlox
 {
 	internal static class Functions
 	{
-		public static string GetIp()
-		{
-			return Functions.wc.DownloadString(api.getip);
-		}
 		public static string id(string user)
 		{
 			return Functions.wc.DownloadString(api.id + "?user=" + user);
